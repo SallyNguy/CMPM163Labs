@@ -9,8 +9,8 @@
 		</style>
 	</head>
 	<body>
-		<script src="C:\Users\Sally\Documents\GitHub\CMPM163Labs\three.js-master\three.js-master\build\three.js"></script>
-		<script src="C:\Users\Sally\Documents\GitHub\CMPM163Labs\three.js-master\three.js-master\examples\js\loaders\GLTFLoader.js"></script>
+		<script src="../three.js-master/build/three.js"></script>
+		<script src="../three.js-master/examples/js/loaders/GLTFLoader.js"></script>
 		<script>
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(75,
@@ -20,13 +20,22 @@
       document.body.appendChild(renderer.domElement);
       camera.position.z = 200;
 
-			var light = new THREE.PointLight(0xffffff, 1, 1000);
+			var light = new THREE.PointLight(0xCA92FF, 1, 1000);
 			light.position.set(50, 50, 50);
+			scene.add(light);
+
+			var light = new THREE.PointLight(0x92BDFF, 1, 1000);
+			light.position.set(25, 25, 25);
+			scene.add(light);
+
+			var light = new THREE.PointLight(0xFF92FD, 5, 1000);
+			light.position.set(0, 0, 0);
 			scene.add(light);
 
 			var loader = new THREE.GLTFLoader();
 			loader.load('calla_lily_with_roses.glb', function (gltf) {
-				gltf.scene.position.x = -50;
+				gltf.scene.position.x = -55;
+				gltf.scene.position.y = 25;
 				gltf.scene.rotation.y = -5;
 				gltf.scene.scale.x = 1.3;
 				gltf.scene.scale.y = 1.3;
@@ -34,19 +43,30 @@
 
 				scene.add(gltf.scene);
 				},
+				function (xhr)
+				{ console.log((xhr.loaded / xhr.total * 100) + '% loaded' ); },
+				 function (error)
+				 {console.error(error);});
+
 				loader.load('cat.glb', function (gltf) {
 					gltf.scene.position.x = 0;
 					gltf.scene.rotation.y = 0;
-					gltf.scene.scale.x = 1.3;
+					gltf.scene.scale.x = 1.5;
 					gltf.scene.scale.y = 1.3;
 					gltf.scene.scale.z = 1.3;
 
 					scene.add(gltf.scene);
 					},
+					function (xhr)
+				{ console.log((xhr.loaded / xhr.total * 100) + '% loaded' ); },
+				 function (error)
+				 {console.error(error);});
+
 				loader.load('books.glb', function (gltf) {
-						gltf.scene.position.x = 50;
-						gltf.scene.rotation.y = 5;
-						gltf.scene.scale.x = 5;
+						gltf.scene.position.x = 60;
+						gltf.scene.position.y = -70;
+						gltf.scene.rotation.y = 15;
+						gltf.scene.scale.x = 1.3;
 						gltf.scene.scale.y = 1.3;
 						gltf.scene.scale.z = 1.3;
 
