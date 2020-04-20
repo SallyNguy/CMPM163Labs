@@ -1,13 +1,9 @@
-uniform float time;
+uniform vec3 colorA;
+uniform vec3 colorB;
 
-varying vec2 vUv;
+varying vec3 vUv;
 
 void main() {
+  gl_FragColor = vec4(mix(colorA, colorB, vUv.z), 1.0);
 
-      vec2 position = - 1.0 + 2.0 * vUv;
-
-      float red = abs( sin( position.x * position.y + time / 5.0 ) );
-      float green = abs( sin( position.x * position.y + time / 4.0 ) );
-      float blue = abs( sin( position.x * position.y + time / 3.0 ) );
-      gl_FragColor = vec4( red, green, blue, 1.0 );
 }
