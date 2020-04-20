@@ -60,13 +60,32 @@
               		console.error('An error happened');
               	});
 
+			//load fragmentshader2
+						loader.load('shaders/fragmentshader2.frag',
+						// onLoad callback
+						function (data) {
+							console.log(data); // output the text to the console
+							fshader = data;
+							count += 1;
+							//addCoolCube(); // we will write this method
+						},
+						// onProgress callback
+						function (xhr) {
+							console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+						},
+						// onError callback
+						function (err) {
+							console.error('An error happened');
+						});
+
+
 
 			// setup the cube
             var geometry = new THREE.BoxGeometry();
-            var material = new THREE.MeshPhongMaterial( { color: 0xdddddd,specular: 0x00ff00, shininess: 30 });
+            var material = new THREE.MeshPhongMaterial( { color: 0xE9E9E9  ,specular: 0x25FF06 , shininess: 60 });
             var cube = new THREE.Mesh( geometry, material );
 
-            var material2 = new THREE.MeshBasicMaterial( { color: 0xff6666, wireframe: true } );
+            var material2 = new THREE.MeshBasicMaterial( { color: 0x60EEFF, wireframe: true } );
             var cube2 = new THREE.Mesh( geometry, material2 );
 
      			  scene.add(cube);
@@ -88,24 +107,38 @@
           geometry1.rotateX(0.01);
           geometry1.rotateY(0.01);
         }
+				if(geometry0) {
+							geometry0.rotateX(0.01);
+							geometry0.rotateY(0.01);
+						}
 
 				renderer.render(scene, camera);
-
-
 			}
 			animate();
 
 
 var geometry1, material1, mesh1;
+var geometry0, material0, mesh0;
 
 	function addCoolCube() {
 		if(count == 2) {
 			let uniforms = {
 					colorB: {type: 'vec3', value: new
-			THREE.Color(0xACB6E5)},
+			THREE.Color(0xFC60FF)},
 					colorA: {type: 'vec3', value: new
-			THREE.Color(0x74ebd5)}
+			THREE.Color(0x6069FF)}
 		};
+
+		if(count == 2) {
+			let uniforms = {
+					color1: {type: 'vec3', value: new
+			THREE.Color(0xFC60FF)},
+					color2: {type: 'vec3', value: new
+			THREE.Color(0x6069FF)}
+		};
+}
+
+
 			geometry1 = new THREE.BoxGeometry(1, 1, 1);
 			material1 =  new THREE.ShaderMaterial({
 			uniforms: uniforms,
@@ -113,9 +146,21 @@ var geometry1, material1, mesh1;
 			vertexShader: vshader,
 			precision: "mediump"});
 
-		mesh1 = new THREE.Mesh(geometry1, material1);
-		mesh1.position.y = 2;
-		scene.add(mesh1);
+			geometry0 = new THREE.BoxGeometry(1, 1, 1);
+			material0 =  new THREE.ShaderMaterial({
+			uniforms: uniforms,
+			fragmentShader: fshader,
+			vertexShader: vshader,
+			precision: "mediump"});
+
+			mesh1 = new THREE.Mesh(geometry1, material1);
+			mesh1.position.y = 2;
+			scene.add(mesh1);
+
+			mesh0 = new THREE.Mesh(geometry0, material0);
+			mesh0.position.y = 2;
+			mesh0.position.x = -2;
+			scene.add(mesh0);
 	}
 }
 
