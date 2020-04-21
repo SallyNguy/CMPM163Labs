@@ -6,6 +6,7 @@ part 2 - ![](lab2/part2screenshot.png)
 
 
 Lab 3: https://drive.google.com/file/d/1PgLWZ6pAk4TViyQewtNJaF6jvGRHFr5R/view?usp=sharing
+
 top left - i mixed two colors to form a slow gradual gradient 
 top right - i interpolated between two colors 
 bottom left - i set the wireframe to true 
