@@ -122,11 +122,6 @@
 var geometry1, material1, mesh1;
 var geometry0, material0, mesh0;
 
-var textureGrass = textureLoader.load( "shaders/grass2.jpg" );
-				textureGrass.repeat.set( 6, 2 );
-				textureGrass.wrapS = textureGrass.wrapT = THREE.RepeatWrapping;
-				textureGrass.encoding = THREE.sRGBEncoding;
-
 	function addCoolCube() {
 		if(count == 2) {
 			let uniforms = {
@@ -151,18 +146,17 @@ var textureGrass = textureLoader.load( "shaders/grass2.jpg" );
 
 	function addGrassCube(){
 		if(count == 3) {
-			let uniforms = {
-			texture1: { type: 'vec3', value: textureGrass }
+			let uniforms0 = {
+			"texture1": {value: textureLoader.load('shaders/grass2.jpg') }
 
 		};
 
-		uniforms[ "texture1" ].value = uniforms[ "texture1" ];
+		uniforms0[ "texture1" ].value.wrapS = uniforms0[ "texture1" ].value.wrapT = THREE.RepeatWrapping;
 		geometry0 = new THREE.BoxGeometry(1, 1, 1);
 		material0 =  new THREE.ShaderMaterial({
-		uniforms: uniforms,
+		uniforms: uniforms0,
 		fragmentShader: help,
-		vertexShader: vshader,
-		precision: "mediump"});
+		vertexShader: vshader});
 
 		mesh0 = new THREE.Mesh(geometry0, material0);
 		mesh0.position.y = 2;
