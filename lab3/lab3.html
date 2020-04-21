@@ -15,6 +15,7 @@
       			var scene = new THREE.Scene();
       			var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
       			var renderer = new THREE.WebGLRenderer();
+						var textureLoader = new THREE.TextureLoader();
       			renderer.setSize(window.innerWidth, window.innerHeight);
       			document.body.appendChild(renderer.domElement);
 			      camera.position.z = 5;
@@ -22,7 +23,7 @@
             THREE.Cache.enabled = true;
             var count = 0;
             var loader = new THREE.FileLoader();
-            var fshader, vshader;
+            var fshader, vshader, help;
 
       //load vertexShader
             loader.load('shaders/vertexShader.vert',
@@ -32,6 +33,7 @@
             			vshader = data;
             			count += 1;
             			addCoolCube(); // we will write this method
+									addGrassCube();
             		},
             // onProgress callback
             	function (xhr) {
@@ -65,9 +67,9 @@
 						// onLoad callback
 						function (data) {
 							console.log(data); // output the text to the console
-							fshader = data;
+							help = data;
 							count += 1;
-							//addCoolCube(); // we will write this method
+							addGrassCube();
 						},
 						// onProgress callback
 						function (xhr) {
@@ -120,6 +122,11 @@
 var geometry1, material1, mesh1;
 var geometry0, material0, mesh0;
 
+var textureGrass = textureLoader.load( "shaders/grass2.jpg" );
+				textureGrass.repeat.set( 6, 2 );
+				textureGrass.wrapS = textureGrass.wrapT = THREE.RepeatWrapping;
+				textureGrass.encoding = THREE.sRGBEncoding;
+
 	function addCoolCube() {
 		if(count == 2) {
 			let uniforms = {
@@ -129,25 +136,8 @@ var geometry0, material0, mesh0;
 			THREE.Color(0x6069FF)}
 		};
 
-		if(count == 2) {
-			let uniforms = {
-					color1: {type: 'vec3', value: new
-			THREE.Color(0xFC60FF)},
-					color2: {type: 'vec3', value: new
-			THREE.Color(0x6069FF)}
-		};
-}
-
-
 			geometry1 = new THREE.BoxGeometry(1, 1, 1);
 			material1 =  new THREE.ShaderMaterial({
-			uniforms: uniforms,
-			fragmentShader: fshader,
-			vertexShader: vshader,
-			precision: "mediump"});
-
-			geometry0 = new THREE.BoxGeometry(1, 1, 1);
-			material0 =  new THREE.ShaderMaterial({
 			uniforms: uniforms,
 			fragmentShader: fshader,
 			vertexShader: vshader,
@@ -156,14 +146,30 @@ var geometry0, material0, mesh0;
 			mesh1 = new THREE.Mesh(geometry1, material1);
 			mesh1.position.y = 2;
 			scene.add(mesh1);
-
-			mesh0 = new THREE.Mesh(geometry0, material0);
-			mesh0.position.y = 2;
-			mesh0.position.x = -2;
-			scene.add(mesh0);
 	}
 }
 
+	function addGrassCube(){
+		if(count == 3) {
+			let uniforms = {
+			texture1: { type: 'vec3', value: textureGrass }
+
+		};
+
+		uniforms[ "texture1" ].value = uniforms[ "texture1" ];
+		geometry0 = new THREE.BoxGeometry(1, 1, 1);
+		material0 =  new THREE.ShaderMaterial({
+		uniforms: uniforms,
+		fragmentShader: help,
+		vertexShader: vshader,
+		precision: "mediump"});
+
+		mesh0 = new THREE.Mesh(geometry0, material0);
+		mesh0.position.y = 2;
+		mesh0.position.x = -2;
+		scene.add(mesh0);
+}
+	}
 
 
 		</script>
