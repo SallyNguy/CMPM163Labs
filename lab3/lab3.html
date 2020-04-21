@@ -144,6 +144,29 @@ var geometry0, material0, mesh0;
 	}
 }
 
+function addGrassCube(){
+	if(count == 3) {
+		let uniforms0 = {
+				color2: {type: 'vec3', value: new
+		THREE.Color(0xFC60FF)},
+				color1: {type: 'vec3', value: new
+		THREE.Color(0xffffff)},
+
+	};
+
+	geometry0 = new THREE.BoxGeometry(1, 1, 1);
+	material0 =  new THREE.ShaderMaterial({
+	uniforms: uniforms0,
+	fragmentShader: help,
+	vertexShader: vshader});
+
+	mesh0 = new THREE.Mesh(geometry0, material0);
+	mesh0.position.y = 2;
+	mesh0.position.x = -2;
+	scene.add(mesh0);
+}
+}
+/*
 	function addGrassCube(){
 		if(count == 3) {
 			let uniforms0 = {
@@ -164,7 +187,7 @@ var geometry0, material0, mesh0;
 		scene.add(mesh0);
 }
 	}
-
+*/
 
 		</script>
 	</body>
