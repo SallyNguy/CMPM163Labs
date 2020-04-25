@@ -11,11 +11,13 @@
 	</head>
 	<body>
 		<script src="../three.js-master/three.js-master/build/three.js"></script>
+
+
 		<script>
 			// setup the scene
-      			var scene = new THREE.Scene();
-      			var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-      			var renderer = new THREE.WebGLRenderer();
+      		var scene = new THREE.Scene();
+      		var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+      		var renderer = new THREE.WebGLRenderer();
       			renderer.setSize(window.innerWidth, window.innerHeight);
       			document.body.appendChild(renderer.domElement);
 			camera.position.z = 5;
@@ -107,7 +109,8 @@
 
 				function addTiledShaderCube() {
 					if(count == 3) {
-						var uniforms = {texture2: { type: "t", value: THREE.ImageUtils.loadTexture("cat.jpg")}
+						var uniforms = {
+							texture2: { type: "t", value: THREE.ImageUtils.loadTexture("cat.jpg")}
 					};
       		geometry2 = new THREE.BoxGeometry(1, 1, 1);
       		material2 =  new THREE.ShaderMaterial({
@@ -117,6 +120,9 @@
       				precision: "mediump"});
 
       		mesh2 = new THREE.Mesh(geometry2, material2);
+      		uniforms.texture2.wrapS = THREE.RepeatWrapping;
+      		uniforms.texture2.wrapT = THREE.RepeatWrapping;
+      		uniforms.texture2.repeat.set(4,4);
       		mesh2.position.x = -1;
       		mesh2.position.y = 2;
       		scene.add(mesh2);
