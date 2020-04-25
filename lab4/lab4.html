@@ -21,29 +21,7 @@
 			camera.position.z = 5;
 			
 
-//using shaders to add cube
-			var geometry1, material1, mesh1;
 
-				function addTextureShaderCube() {
-					if(count == 2) {
-						let uniforms = {
-        					colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
-        					colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)}
-        				 };
-	
-      		geometry1 = new THREE.BoxGeometry(1, 1, 1);
-      		material1 =  new THREE.ShaderMaterial({
-            		uniforms: uniforms,
-      			fragmentShader: fshader,
-              		vertexShader: vshader,
-      			precision: "mediump"});
-
-      		mesh1 = new THREE.Mesh(geometry1, material1);
-      		mesh1.position.x = 2;
-      		mesh1.position.y = 2;
-      		scene.add(mesh1);
-    	}
-}
 			//Loaderss
 			THREE.Cache.enabled = true;
             var count = 0;
@@ -57,6 +35,7 @@
       			vshader = data;
       			count += 1;
       			addTextureShaderCube(); // we will write this method
+      			addTiledShaderCube();
       		},
       		// onProgress callback
       		function (xhr) {
@@ -84,7 +63,65 @@
       			console.error('An error happened');
       		});
 
+			loader.load('shaders/help.frag',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			help = data;
+      			count += 1;
+      			addTiledShaderCube(); // we will write this method
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+			// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
 			
+//using shaders to add cube
+			var geometry1, material1, mesh1;
+
+				function addTextureShaderCube() {
+					if(count == 2) {
+						var uniforms = {texture1: { type: "t", value: THREE.ImageUtils.loadTexture("176.jpg")}
+					};
+      		geometry1 = new THREE.BoxGeometry(1, 1, 1);
+      		material1 =  new THREE.ShaderMaterial({
+            		uniforms: uniforms,
+      			fragmentShader: fshader,
+              		vertexShader: vshader,
+      			precision: "mediump"});
+
+      		mesh1 = new THREE.Mesh(geometry1, material1);
+      		mesh1.position.x = 1;
+      		mesh1.position.y = 2;
+      		scene.add(mesh1);
+    	}
+}
+
+//using shaders to add tiled cube
+			var geometry2, material2, mesh2;
+
+				function addTiledShaderCube() {
+					if(count == 3) {
+						var uniforms = {texture2: { type: "t", value: THREE.ImageUtils.loadTexture("cat.jpg")}
+					};
+      		geometry2 = new THREE.BoxGeometry(1, 1, 1);
+      		material2 =  new THREE.ShaderMaterial({
+            		uniforms: uniforms,
+            		fragmentShader: help,
+              		vertexShader: vshader,
+      				precision: "mediump"});
+
+      		mesh2 = new THREE.Mesh(geometry2, material2);
+      		mesh2.position.x = -1;
+      		mesh2.position.y = 2;
+      		scene.add(mesh2);
+    	}
+}
 
 
 			// setup the cube
@@ -107,7 +144,7 @@
       			var material3 = new THREE.MeshPhongMaterial({map: texture3, normalMap: normMap3});
       			var cube3 = new THREE.Mesh(geometry3, material3);
      			scene.add(cube3);
-     			cube3.position.y = 2;
+     			cube3.position.x = -2;
 
 
 
