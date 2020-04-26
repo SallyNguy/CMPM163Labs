@@ -14,15 +14,15 @@ y = v * 0.14
 
 black
 
-top left - 
+top left - I scaled the image down and placed each image in every corner in the fragment shader
 
-top right - 
+top right - I used the fragment shader to output the texture 
 
-bottom left -
+bottom left -  Along with the texture, I loaded it with a normal map onto another cube
 
-bottom middle -
+bottom middle - I loaded the texture onto the cube with the phong material 
 
-bottom right - 
+bottom right - Along with the texture, I loaded it with a normal map
 
 ## Lab 3: https://drive.google.com/file/d/1PgLWZ6pAk4TViyQewtNJaF6jvGRHFr5R/view?usp=sharing
 
