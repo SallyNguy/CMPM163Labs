@@ -120,9 +120,6 @@
       				precision: "mediump"});
 
       		mesh2 = new THREE.Mesh(geometry2, material2);
-      		uniforms.texture2.wrapS = THREE.RepeatWrapping;
-      		uniforms.texture2.wrapT = THREE.RepeatWrapping;
-      		uniforms.texture2.repeat.set(4,4);
       		mesh2.position.x = -1;
       		mesh2.position.y = 2;
       		scene.add(mesh2);
