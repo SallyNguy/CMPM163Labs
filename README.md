@@ -1,6 +1,8 @@
 # CMPM163Labs
 
-## Lab 4
+## Lab 4 
+
+https://drive.google.com/file/d/19rrsiamw0hqsjwCx2-XK2L9Z60hUyuEo/view?usp=sharing
 
 - What is the formula given a u value of the uv coordinate (a value between 0 and 1), I get the x value of the pixel to sample from in this 8x8 texture?
 
