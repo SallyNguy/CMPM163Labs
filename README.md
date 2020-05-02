@@ -1,6 +1,7 @@
 # CMPM163Labs
 
-## Lab 4
+## Lab 4 
+https://drive.google.com/file/d/19rrsiamw0hqsjwCx2-XK2L9Z60hUyuEo/view?usp=sharing
 
 - What is the formula given a u value of the uv coordinate (a value between 0 and 1), I get the x value of the pixel to sample from in this 8x8 texture?
 
@@ -24,7 +25,8 @@ bottom middle - I loaded the texture onto the cube with the phong material
 
 bottom right - Along with the texture, I loaded it with a normal map
 
-## Lab 3: https://drive.google.com/file/d/1PgLWZ6pAk4TViyQewtNJaF6jvGRHFr5R/view?usp=sharing
+## Lab 3: 
+https://drive.google.com/file/d/1PgLWZ6pAk4TViyQewtNJaF6jvGRHFr5R/view?usp=sharing
 
 top left - i mixed two colors to form a slow gradual gradient along the Y axis
 
