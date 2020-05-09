@@ -1,4 +1,29 @@
 # CMPM163Labs
+## Lab 6
+![](lab6/scene_playing.png)
+#### Lights
+Area Light: only works on a baked light map and shines in all directions to one side of a rectangular plane
+
+Spot Light: lights up all objects within a cone: responds to both rotation and position
+
+Directional Light: effects all objects on the scene set by the game object's rotation; postion does not matter
+
+Point Light: lights up objects depending on its position on the screen and shines equally in all directions
+
+![](lab6/w_lights.png)
+
+#### Material
+I made the material by setting the shader to standard(specular setup), changed the rendering mode to opaque, and decreased the smoothness to make it resemble a pearl.
+
+![](lab6/cup.png) ![](lab6/cup_material.png)
+
+#### Textures
+Cardboard box: imported from a website, added texture, normal maps, and metallic maps and adjusted smoothness to my liking.
+
+Business Shriek Magazine: created my own mesh and took a magazine png online and converted it into a texture. And increased the metallic so the cover can be easily seen
+
+#### Skybox
+I added a clear sunny day with very aesthetic clouds skybox. 
 
 ## Lab 5 
 https://drive.google.com/file/d/1CzOp2suzvq7O6BoS9HNcQlruJvUwHuB5/view?usp=sharing
