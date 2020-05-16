@@ -1,4 +1,13 @@
 # CMPM163Labs
+## Lab 7
+https://drive.google.com/file/d/1QwPLgMe3qlFHlz4Bm9fkFrx29OWoPVmp/view?usp=sharing
+
+Mountain: I used vertex shaders to manipulate a pill shaped mesh to make random spikes on the mesh. 
+
+I used the same method for the clouds and the beach that are in the scene with appropriate fiddling of the slider.
+
+Waves: I applied a shader code that uses a math equation to animate the plane into a wave motion. I added a second material that appears under the waves to add some dimension to it.  I applied the same shader to the foam that rides along the waves except that I changed the color to white. 
+
 ## Lab 6
 ![](lab6/scene_playing.png)
 #### Lights
