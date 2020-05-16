@@ -2,6 +2,8 @@
 ## Lab 7
 https://drive.google.com/file/d/1QwPLgMe3qlFHlz4Bm9fkFrx29OWoPVmp/view?usp=sharing
 
+![](lab7/pearl.png)
+
 Mountain: I used vertex shaders to manipulate a pill shaped mesh to make random spikes on the mesh. 
 
 I used the same method for the clouds and the beach that are in the scene with appropriate fiddling of the slider.
