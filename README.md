@@ -10,6 +10,8 @@ I used the same method for the clouds and the beach that are in the scene with a
 
 Waves: I applied a shader code that uses a math equation to animate the plane into a wave motion. I added a second material that appears under the waves to add some dimension to it.  I applied the same shader to the foam that rides along the waves except that I changed the color to white. 
 
+My partner did not finish at the same time I did.
+
 ## Lab 6
 ![](lab6/scene_playing.png)
 #### Lights
