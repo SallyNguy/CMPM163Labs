@@ -8,7 +8,7 @@ The image's color scheme is the main inspiration. It is very warm and has a comf
 ![](Lab8/screnshot2.png) 
 ![](Lab8/srenshot.png)
 
-Partner:
+#### Partner:
 
 Which part did they do?:
 
