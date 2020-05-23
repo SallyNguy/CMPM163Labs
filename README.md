@@ -8,6 +8,20 @@ The image's color scheme is the main inspiration. It is very warm and has a comf
 ![](Lab8/screnshot2.png) 
 ![](Lab8/srenshot.png)
 
+Partner:
+
+Which part did they do?:
+
+They did part 1 of the lab. 
+
+Which part of a tutorial did your partner find most challenging?:
+
+
+Which part of a tutorial did your partner find most interesting?:
+
+
+
+
 
 ## Lab 7
 https://drive.google.com/file/d/1_-s0Jj13oWqgNXLRpu4038Op7awtNnwl/view?usp=sharing
