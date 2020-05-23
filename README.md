@@ -1,4 +1,14 @@
 # CMPM163Labs
+## Lab 8
+
+![](Lab8/inspiration.png)
+
+The image's color scheme is the main inspiration. It is very warm and has a comforting feeling. Thus, I added trees and changed the skybox to reflect that.
+
+![](Lab8/screnshot2.png) 
+![](Lab8/srenshot.png)
+
+
 ## Lab 7
 https://drive.google.com/file/d/1_-s0Jj13oWqgNXLRpu4038Op7awtNnwl/view?usp=sharing
 
