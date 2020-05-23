@@ -16,10 +16,11 @@ They did part 1 of the lab.
 
 Which part of a tutorial did your partner find most challenging?:
 
+The most difficult part of the project for them was fixing up the code to be more flexible, as they found the code provided in the video to be a bit janky, especially if you wanted a lot of different building types
 
 Which part of a tutorial did your partner find most interesting?:
 
-
+The part they found most interesting was the perlin noise aspect, as it allows for more controlled randomness.
 
 
 
