@@ -6,9 +6,9 @@ using UnityEngine;
 public class buildCity : MonoBehaviour
 {
     public GameObject[] buildings;
-    public int mapWidth = 20;
+    public int mapWidth = 100;
     public int mapHeight = 20;
-    int buildingFootprint = 3;
+    int buildingFootprint = 4;
 
     void Start()
     {
@@ -37,6 +37,7 @@ public class buildCity : MonoBehaviour
                     Instantiate(buildings[6], pos, Quaternion.identity);
                 else if (result < 9)
                     Instantiate(buildings[7], pos, Quaternion.identity);
+
             }
         }
         
